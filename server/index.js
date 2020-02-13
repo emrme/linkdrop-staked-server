@@ -49,7 +49,14 @@ const getTopupAddress = async (req, res) => {
 // Define routes
 app.get('/', (req, res) => res.send(`Hello, world!`))
 app.get('/info', asyncHandler(getTopupAddress))
-app.post('/generate-link', asyncHandler(linksController.generateLink))
+app.post(
+  '/generate-link-email',
+  asyncHandler(linksController.generateLinkEmail)
+)
+app.post(
+  '/generate-link-phone',
+  asyncHandler(linksController.generateLinkPhone)
+)
 app.get('/get-status/:linkId', asyncHandler(linksController.getLinkStatus))
 
 // error handling
