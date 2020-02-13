@@ -3,10 +3,10 @@ import linkService from '../services/links.service'
 import logger from '../utils/logger'
 
 class UsersService {
-  async create ({ email, userId, linkId }) {
+  async create ({ email, phone, linkId }) {
     const user = new User({
       email,
-      userId,
+      phone,
       linkId
     })
 
