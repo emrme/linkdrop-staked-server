@@ -1,0 +1,63 @@
+{
+  "name": "Staked.us links server",
+  "description": "Server to generate links for staked.us",
+  "repository": "https://github.com/amiromayer/linkdrop-staked-server",
+  "success_url": "/info",
+  "env": {
+    "SENDER_ADDRESS": {
+      "description": "Sender address",
+      "value": "0x15762B207d19bdf17c839791F71fcAb0AddBB2cE"
+    },
+    "SIGNING_KEY": {
+      "description": "Signing key",
+      "value": ""
+    },
+    "CAMPAIGN_ID": {
+      "description": "Campaign id",
+      "value": "1"
+    },
+    "CHAIN": {
+      "description": "Chain name",
+      "value": "mainnet"
+    },
+    "TOKEN_ADDRESS": {
+      "description": "ERC20 token contract address. If you only want to send ETH, leave it empty",
+      "value": "",
+      "required": false
+    },
+    "TOKENS_AMOUNT": {
+      "description": "Tokens amount to send in atomic values. If you only want to send ETH, set it to 0",
+      "value": "0",
+      "required": false
+    },
+    "NATIVE_TOKENS_AMOUNT": {
+      "description": "ETH amount to send in wei. If you only want to send tokens, set it to 0",
+      "value": "0",
+      "required": false
+    },
+    "LINKDROP_FACTORY_ADDRESS": {
+      "description": "Linkdrop factory address",
+      "value": "0xba287dC96A7Da4a2fDaAc9e84d7772fB63efC643"
+    },
+    "JSON_RPC_URL": {
+      "description": "JSON RPC URL like (https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID)",
+      "value": "https://mainnet.infura.io/v3/16dfd66c4a1a4a9da5724254c97c93e6",
+      "required": true
+    },
+    "FEE_AMOUNT": {
+      "description": "Fee amount in wei",
+      "value": "2000000000000000",
+      "required": true
+    },
+    "PASSWORD_HASH": {
+      "description": "Password hash",
+      "value": "",
+      "required": true
+    }
+  },
+  "keywords": ["node", "express"],
+  "addons": ["mongolab"],
+  "scripts": {
+    "postdeploy": "yarn global add pm2"
+  }
+}

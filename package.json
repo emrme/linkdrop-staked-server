@@ -1,0 +1,19 @@
+{
+  "name": "linkdrop-staked-server",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/amiromayer/linkdrop-staked-server",
+  "license": "MIT",
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "server": "npx babel-node server/index.js",
+    "dev": "nodemon --exec npx babel-node server/index.js",
+    "start": "npx pm2-runtime start --name staked-server npm -- run server"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
